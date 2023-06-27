@@ -104,6 +104,23 @@ void printReverse(Node *head){
     cout<<head->data<<"->";
 }
 
+//To reverse any singly linked list
+Node* reverse(Node* head) {
+    
+    Node *previous,*current,*nextptr;
+    current=head;
+    previous=NULL;
+    //iterative way
+    while(current != NULL){
+        nextptr=current->next;
+        current->next=previous;
+        previous=current;
+        current=nextptr;
+    }
+    head=previous;
+    return head;
+}
+
 int main(){
 
     //Creating a node head and initialing it with NULL
